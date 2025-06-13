@@ -985,3 +985,16 @@ long double String::stold(const char *s)
     }
     return num / factor;
 }
+const char* String::c_str() const {
+    return arr;
+}
+
+String operator+(const String& lhs, const char* rhs) 
+{
+    return lhs + String(rhs);
+}
+
+String operator+(const char* lhs, const String& rhs) 
+{
+    return String(lhs) + rhs;
+}

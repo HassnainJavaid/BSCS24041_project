@@ -15,7 +15,7 @@ public:
 	String(int size, char ch);
 	String(const String &other);
 	~String();
-
+    const char* c_str() const;
 	friend ostream &operator<<(ostream &out, const String &s);  // Output operator
 	friend istream &operator>>(istream &in, String &s);  // Input operator
 	String &operator=(const String &other);  // Assignment operator
@@ -98,3 +98,5 @@ public:
 	long double stold(const char *s);
 };
 #endif
+String operator+(const String& lhs, const char* rhs);
+String operator+(const char* lhs, const String& rhs);
